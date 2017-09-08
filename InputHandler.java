@@ -6,7 +6,6 @@ import java.util.Random;
 
 public class InputHandler extends MouseAdapter{
     private TicTacToeCell cell;
-    Random r = new Random();
 
     public InputHandler(TicTacToeCell cell){
         this.cell = cell;
@@ -25,8 +24,22 @@ public class InputHandler extends MouseAdapter{
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        GameValues.getInst().setCellValue(cell.x, cell.y, GameValues.getInst().getTurn());
+        GameValues.getInst().setCellValue(cell.x + cell.xdisplace, cell.y + cell.ydisplace, GameValues.getInst().getTurn());
         cell.repaint();
         GameValues.getInst().switchTurn();
+
+
+        /*System.out.println("board");
+        for(int i=0; i<9; i++){
+            for(int j=0; j<9; j++){
+                System.out.print(i + "," + j);
+                if(GameValues.getInst().getBoard()[i][j]!='\u0000'){
+                    System.out.print(GameValues.getInst().getBoard()[i][j]);
+                }else{
+                    System.out.print('-');
+                }
+            }
+            System.out.println();
+        }*/
     }
 }

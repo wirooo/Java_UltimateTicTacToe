@@ -47,5 +47,8 @@ public class GameValues {
         jlblstatus.setText(turn + "'s turn");
     }
 
+    public char[][] getBoard(){
+        return board;
+    }
 
 }

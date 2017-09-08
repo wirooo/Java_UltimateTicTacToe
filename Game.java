@@ -18,10 +18,11 @@ public class Game {
             smallPanel.setBorder(new LineBorder(Color.BLACK, 3));
             for(int j=0; j<3; j++){
                 for(int k=0; k<3; k++){
-                    smallPanel.add(new TicTacToeCell(j, k));
+                    smallPanel.add(new TicTacToeCell(j, k, i));
                 }
             }
             bigPanel.add(smallPanel);
+
         }
         GameValues.getInst(9, 9);
         frame.setSize(Integer.parseInt(ConfigHandler.getInst().getPropertyValue("windowWidth")), Integer.parseInt(ConfigHandler.getInst().getPropertyValue("windowHeight")));
